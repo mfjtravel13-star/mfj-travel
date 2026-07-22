@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply min-h-screen bg-ebony text-champagne antialiased;
+  background-image: radial-gradient(circle at top left, rgba(212, 175, 55, 0.2), transparent 30%), linear-gradient(135deg, #060606 0%, #111111 100%);
+}
+
+::selection {
+  @apply bg-gold/40 text-white;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .card-sheen {
+    @apply rounded-3xl border border-gold/20 bg-white/5 backdrop-blur-xl shadow-glow;
+  }
+
+  .hero-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
